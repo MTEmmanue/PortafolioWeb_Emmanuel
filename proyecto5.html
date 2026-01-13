@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETL Python a SQL</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="img/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="inicio"></body>
+    
+<!-- Menú con botón de Inicio -->
+<nav class="menu">
+    <a href="projetcs.html" class="menu-button">
+        <i class="fas fa-arrow-left"></i> Inicio
+    </a>
+    <div class="mode">
+        <div class="moon-sun" id="toggle-switch">
+            <i class="fa fa-moon" id="moon"></i>
+            <i class="fa fa-sun" id="sun"></i>
+        </div>
+    </div>
+</nav>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de la Calidad del Aire en Lima</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hwb(0 96% 4%);
+            color: #333;
+        }
+        header img {
+            width: 20%;
+            height: auto;
+        }
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 30px;
+        }
+        .left-column {
+            flex: 6.0; /* Ajustado: menos ancho para dar espacio al lateral derecho */
+            min-width: 0;
+        }
+        .right-column {
+            flex: 3.0; /* Más ancho para Tecnologías */
+            min-width: 10px; /* evita colapsar en pantallas medianas */
+        }
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .green {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .orange {
+            background-color: #ffeeba;
+            color: #856404;
+        }
+        h1 {
+            color: #000;
+            margin-top: 0;
+        }
+        .vision-container {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .vision-container h2 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        .tech-container {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+        }
+        .tech-container h3 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        .tech-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+            margin-top: 10px;
+        }
+        .tech-table td {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .tech-1 { background-color: #d4edda; color: #155724; }
+        .tech-2 { background-color: #cce5ff; color: #004085; }
+        .tech-3 { background-color: #fff3cd; color: #856404; }
+        .tech-4 { background-color: #f8d7da; color: #721c24; }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        /* Imagen actual vs predicted: tamaño reducido y responsivo */
+        .actual_vs_predicted {
+            width: 100%;
+            max-width: 700px; /* límite de tamaño en escritorio */
+            height: auto;
+            display: block;
+            margin-bottom: 1px;
+        }
+        @media (max-width: 768px) {
+            .actual_vs_predicted { max-width: 320px; }
+        }
+        /* ===== Modo oscuro para esta página ===== */
+        body.dark {
+            background-color: #0b0f12;
+            color: #e5e7eb;
+        }
+
+        body.dark .main-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: none;
+        }
+
+        body.dark .vision-container,
+        body.dark .tech-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: #e5e7eb;
+        }
+
+        body.dark h1, body.dark h2, body.dark h3, body.dark p, body.dark li {
+            color: #e5e7eb;
+        }
+
+        body.dark hr {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        body.dark .tag {
+            background: rgba(255, 255, 255, 0.02);
+            color: #e5e7eb;
+            border: none;
+        }
+
+        body.dark .tag.green { background-color: rgba(16,185,129,0.10); color: #bbf7d0; }
+        body.dark .tag.orange { background-color: rgba(249,115,22,0.10); color: #ffd8a8; }
+
+        body.dark .tech-table td.tech-1 { background: rgba(16,185,129,0.06); color: #bbf7d0; }
+        body.dark .tech-table td.tech-2 { background: rgba(59,130,246,0.06); color: #bfdbfe; }
+        body.dark .tech-table td.tech-3 { background: rgba(255,235,59,0.06); color: #fff7c2; }
+        body.dark .tech-table td.tech-4 { background: rgba(244,63,94,0.06); color: #ffd1da; }
+
+        /* Imágenes: evitar fondos blancos dominantes */
+        body.dark .actual_vs_predicted,
+        body.dark .pipeline {
+            filter: brightness(0.95);
+            background: transparent;
+        }
+
+        /* Asegurar que la imagen del pipeline se ajuste al contenedor */
+        .pipeline {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 12px 0;
+        }
+
+        /* Evitar que imágenes en contenedores desborden */
+        .vision-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Botón GitHub en dark */
+        body.dark .github-btn { background: #2d3338; }
+        /* Botón GitHub */
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #24292f;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0 16px 0;
+        }
+        .github-btn i { font-size: 16px; }
+        .github-btn:hover { background: #111214; }
+        
+        /* Compactar texto en la columna derecha */
+        .right-column {
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        .right-column p,
+        .right-column li {
+            font-size: 14px;
+            line-height: 1.35;
+            margin-bottom: 0.9rem;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            hyphens: auto;
+        }
+        .right-column h2,
+        .right-column h3 {
+            margin-top: 0.6rem;
+        }
+        .right-column img,
+        .right-column .auto {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .right-column p,
+            .right-column li { font-size: 13px; line-height: 1.3; }
+        }
+        /* Enlaces en modo oscuro */
+        body.dark a {
+            color: #ffffff;
+        }
+        body.dark a:hover,
+        body.dark a:focus {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        /* Aumentar sangría de todas las listas */
+        li {
+            margin-left: 1.6rem;
+        }
+        @media (max-width: 768px) {
+            .right-column p,
+            .right-column li { font-size: 13px; line-height: 1.3; }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="main-container">
+        <div class="left-column">
+            <img class="actual_vs_predicted" src="img/Proyecto_ETL_Python-SQL.png" alt="Analisis ventas">
+            <div class="tags">
+                <span class="tag tech-2">Data Engineer</span>
+                <span class="tag orange">ETL</span>
+                <span class="tag green">Analisis</span>
+            </div>
+            <!-- Botón que enlaza al repositorio del proyecto en GitHub -->
+            <a class="github-btn" href="https://github.com/MTEmmanue/ETL_Python-SQL" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+            </a>
+            <h1>Proyecto End-to-End: ETL con Python → SQL Server</h1>
+            <div class="vision-container">
+                
+               <p>El proyecto se centra en UBI-Games, una plataforma de videojuegos en línea que utiliza registros de datos 
+                simulados basados en títulos reales de Ubisoft. El ecosistema de datos se compone de cinco dimensiones relacionales 
+                clave que modelan la interacción completa del usuario
+                <br><br>
+                    <li>Catálogo: Datos de los juegos (juegos) incluyendo categorías y fechas de lanzamiento.</li>
+                    <li>Usuarios: Información demográfica de los jugadores (jugadores) como país y registro.</li>
+                    <li>Comportamiento: Registros detallados de sesiones de juego (inicio/fin).</li>
+                    <li>Feedback: Calificaciones dadas por los usuarios (puntuaciones).</li>
+                    <li>Monetización: Transacciones económicas dentro de la plataforma (compras_en_plataforma).</li>
+                    <br><br>
+                    <img class="diagrama" src="img/Diagrama_Videojuegos.png" alt="Diagrama deSQL">
+                </p>
+                <br><br>
+
+                <h3>La Importancia del ETL en Python (Limpieza y Tratamiento)</h3>
+                    El documento es enfático en una condición: "Se espera que realices una etapa de limpieza y tratamiento 
+                    de los datos para corregir inconsistencias", advirtiendo que este paso es clave para resultados confiables.
+                    <br><br>
+                    Nuestro proceso ETL (Extract, Transform, Load) en Python fue diseñado para blindar la calidad del dato ante los errores encontrados en los archivos crudos:
+                    <br><br>
+                    1. Integridad Referencial: Se detectaron y eliminaron registros de sesiones y compras asociados a juegos o jugadores inexistentes (huérfanos), lo cual corrompería cualquier análisis de retención.
+                    <br><br>
+                    2. Lógica Temporal: Se corrigieron formatos de fecha y se unificaron tipos de datos para permitir cálculos de tiempo precisos (duración de sesiones).
+                    <br><br>
+                    3. Calidad Financiera y de Feedback: Se eliminaron transacciones con monto nulo y puntuaciones duplicadas para asegurar que los KPIs de ingresos (SUM(monto)) y satisfacción (AVG(puntuacion)) sean matemáticamente correctos.
+                    <br><br>
+                    Este flujo asegura que los datos que llegan a Power BI y SQL sean "Golden Records": limpios, consistentes y listos para la toma de decisiones ejecutiva.
+                        <br><br>
+                        <img class="pipeline" src="img/ETL_Python.png" alt="Pipeline ETL">
+                    <br><br>
+
+                <h3>Necesidad del Negocio y Objetivo</h3>
+                    La organización busca proyecciones basadas en datos con un objetivo crítico: atraer nuevos 
+                    inversores y consolidar alianzas estratégicas.
+                    <br><br>
+                    El desafío principal radica en que la dirección de la empresa carece de conocimientos técnicos, 
+                    por lo que se requiere transformar datos crudos en un análisis visual, claro y estratégico. 
+                    No basta con mostrar tablas; se deben responder preguntas sobre el comportamiento del usuario, 
+                    la rentabilidad de los juegos y la actividad en la plataforma para facilitar la toma de decisiones.
+                    <br><br>
+
+                <h3>Justificación del Análisis SQL (Business Intelligence)</h3>
+                    Basándonos en los requerimientos, las consultas SQL diseñadas no son aleatorias, sino que responden directamente 
+                    a las métricas sugeridas por la gerencia:
+                    <br><br>
+
+                    <li>Rentabilidad por Categoría: El documento solicita identificar las "categorías más completas" y el 
+                    comportamiento de las compras. Nuestra consulta de Vaca Lechera permite saber qué género financia a la compañía.</li>
+
+                    <li>Engagement (Horas Jugadas): Se pidió explícitamente identificar a los "mejores jugadores" y aquellos 
+                    con "mayor cantidad de horas". La consulta de Usuarios Hardcore segmenta a estos clientes VIP.</li>
+
+                    <li>ARPU por País: Para responder a la métrica de "Países/zonas con mayor cantidad de jugadores activos" y cruzarlo 
+                    con ingresos, calculamos el ingreso promedio por usuario geolocalizado.</li>
+
+                    <li>Calidad vs. Ventas: El documento exige hipótesis sobre "baja puntuación" y "juegos con baja demanda". 
+                    Cruzar ventas con calificaciones nos permite detectar juegos que son éxitos comerciales pero fracasos en calidad.</li>
+
+                    <li>Horas Pico (Infraestructura): Se requiere conocer "Días y horarios de mayor actividad". 
+                    La extracción de horas pico en SQL responde directamente a esta necesidad operativa.</li>
+                    <br><br>
+
+                
+    </div>
+        </div>
+<div class="right-column">
+            <hr>
+            <div class="tech-container">
+                <h3>Tecnologías</h3>
+                <table class="tech-table">
+                    <tr>
+                        <td class="tech-1">Python</td>
+                        <td class="tech-2">Pandas</td>
+                    </tr>
+                    <tr>
+                        <td class="tech-4">sqlalchemy</td>
+                        <td class="tech-3">SQL Server</td>
+                    </tr>
+                </table>
+                <div class="vision-container">
+                <h2>Visión general</h2>
+                <p>
+                    Este proyecto consiste en el desarrollo de una solución integral de Ingeniería de Datos End-to-End para UBI-Games, 
+                    una plataforma de videojuegos simulada. Se diseñó un flujo de trabajo automatizado que ingesta datos crudos desde 
+                    múltiples fuentes CSV, los procesa mediante Python para asegurar su calidad e integridad, 
+                    y los centraliza en una base de datos relacional en SQL Server, transformando registros dispersos en un almacén de
+                    datos confiable listo para la toma de decisiones estratégicas de negocio.
+                </p>    
+                    <br><br>
+                    <h2>  Resultados Obtenidos</h2>
+                   
+                    <p>
+                   
+                        <li>Pipeline ETL Automatizado: Script en Python que extrae, limpia y carga datos masivamente.</li>
+
+                        <li>Data Quality: Filtrado automático de registros huérfanos, duplicados y nulos.</li>
+
+                        <li>Modelado SQL: Base de datos relacional optimizada con índices y claves foráneas.</li>
+
+                        <li>Insights de Negocio: Habilitación de métricas clave (KPIs, Rentabilidad y Churn) mediante SQL.</li>
+
+<br><br>
+</p>
+                                    
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+</body>
+</html>

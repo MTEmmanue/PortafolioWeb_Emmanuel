@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Muñoz - Data Analys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="img/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="inicio">
+    
+</body>
+    
+<ul class="link_list">
+    <li class="list">
+        <a href="index.html#inicio" class="link">Inicio</a> <!-- Redirige a index.html -->
+    </li>
+    <li class="list">
+        <a href="#habilidades" class="link">Habilidades</a>
+    </li>
+    <li class="list">
+        <a href="#proyectos" class="link">Proyectos</a>
+    </li>
+    <li class="list">
+        <a href="#contacto" class="link">Contacto</a>
+    </li>
+</ul>
+   
+
+
+   <!-- ===== END OF  MODAL BOX ===== -->
+
+   <!-- ===== WRAPPER ===== -->
+    <div class="wrapper">
+        <!-- ===== NAVIGATION BAR ===== -->
+        <nav class="nav">
+            <div class="nav_logo">
+                <span>Portafolio</span>
+            </div>
+            <span class="text-xs text-gray-400 font-medium tracking-wide">Data Analyst & Data Science</span>
+            <div class="right_nav">
+                <div class="nav_menu" id="navMenu">
+                    <ul class="link_list">
+                        <div class="close-menu">
+                            <i class="fa fa-times" onclick="menuClose()"></i>
+                        </div>
+                        <li class="list">
+                            <a href="#" class="link">Inicio</a>
+                        </li>
+                        <li class="list">
+                            <a href="#habilidades" class="link">Habilidades</a> <!-- Enlace actualizado -->
+                            <div class="description_box">
+                                <div class="link_description" id="myDescription">
+                                    <div class="content-title">
+                                        <span>Tecnologias que uso</span>
+                                    </div>
+                                    <div class="desc_content">
+                                        <span class="skills-label">Excel</span>
+                                        <span class="skills-label">SQL Server</span>
+                                        <span class="skills-label">PowerBI</span>
+                                        <span class="skills-label">Python</span>
+                                        <span class="skills-label">ML</span>
+                                        <span class="skills-label">R</span>
+                                        <span class="skills-label">N8N</span>
+                                        <span class="skills-label">Automate</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <a href="#proyectos" class="link">Proyectos</a>
+                            
+                        </li>
+                        
+                        <li class="list">
+                            <a href="#contacto" class="link">Contacto</a>
+                                
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="nav_button">
+                    <a href="PDF/CV_EmmanuelTapia (1).pdf" class="btn"><i class="fa fa-download"></i> <span>Descarga CV</span></a>
+                </div>
+                <div class="mode">
+                    <div class="moon-sun" id="toggle-switch">
+                        <i class="fa fa-moon" id="moon"></i>
+                        <i class="fa fa-sun" id="sun"></i>
+                    </div>
+                </div>
+                <div class="nav_menu_btn">
+                    <i class="fa fa-bars" onclick="myMenuFunction()"></i>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- ===== MAIN ===== -->
+        <main class="main">
+            <div class="row hero">
+                <!-- Columna 1 - Contenido y textos -->
+                <div class="col col-1">
+                    <div class="social_icons">
+                        <!-- ===== Icon animated circle ===== -->
+                        <div class="icon_circle"></div>
+        
+                        <!-- ===== Social Icons ===== -->
+                        <a href="https://www.linkedin.com/in/emmanuel-tapia-85567932b/" target="_blank" style="text-decoration: none;" rel="noopener noreferrer">
+                            <i class="fa-brands fa-linkedin-in icon"></i>
+                        </a>
+                        
+                        <a href="https://github.com/MTEmmanue" target="_blank" style="text-decoration: none;" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github icon"></i>
+                        </a>
+                    </div>
+                    <!-- ===== HERO TEXT ===== -->
+                    <div class="hero_box">
+                        <div class="hello">
+                            <p>¡Hola! soy Emmanuel</p> <!-- LO REGRESÉ COMO ESTABA -->
+                        </div>
+                        <div class="job">
+                            <span class="multiText"></span>
+                        </div>
+                        <div class="hero_description">
+                            <p style="font-size: 1.5rem;"> <!-- AUMENTÉ el tamaño SOLO AQUÍ -->
+                                Ayudando a resolver problemas analizando datos y generando información clave para decisiones inteligentes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Columna 2 - Imágenes -->
+                <div class="col col-2">
+                    <div class="circle">
+                        <img src="img/wmremove-transformed-artguru (1).png" alt="Imagen principal">
+                    </div>
+                    <div class="hero-image">
+                        <img src="img/image07.png" alt="Imagen con ico">
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* Estilo para mover la imagen grande más a la izquierda */
+                .circle {
+                    top: 200px;
+                    position: relative;
+                    left: -150px; /* Ajusta el valor según sea necesario */
+                }
+            
+                /* Estilo para alinear la imagen pequeña debajo de la grande y centrarla */
+                .hero-image {
+                    position: absolute;
+                    top: 185px; /* Ajusta la posición vertical según sea necesario */
+                    left: 50%;
+                    transform: translateX(-50%); /* Centra la imagen horizontalmente */
+                }
+            </style>
+            
+        </main>
+        
+        
+    </div>
+    <section class="sobre-mi">
+        <div class="left">
+          <img src="img/estilos_perfil_portafolioweb (1).png" alt="Foto de perfil" class="profile-img">
+      
+          <div class="info">
+            <p><strong>Nombre:</strong> Emmanuel Muñoz</p>
+            <p><strong>Estudiando:</strong> Ingeniería en Ciencia de Datos</p>
+            <p><strong>Procedencia:</strong> México</p>
+          </div>
+      
+          <div class="skills">
+            <div class="skill">
+              <div class="skill-name">Excel 85%</div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-name">SQL 60%</div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width: 60%;"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-name">Power BI 65%</div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width: 65%;"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-name">Python 70%</div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
+            </div>
+            <div class="skill">
+              <div class="skill-name">Estadística con R 55%</div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width: 55%;"></div></div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="right">
+          <div class="title">Sobre Mi</div>
+          <div class="about-text">
+            Estoy iniciando mi camino en la Ciencia de Datos, una área que me apasiona profundamente. Disfruto descubrir patrones, obtener insights y resolver problemas a través del análisis de datos. Cada análisis representa una oportunidad para explorar, aprender y marcar la diferencia. Aspiro a colaborar con equipos innovadores y contribuir a proyectos de impacto significativo, enfrentando desafíos con creatividad y dedicación constante.
+          </div>
+          <div class="details">
+            <p><strong>Perfil:</strong> Analista & Científico de Datos</p>
+            <p><strong>Educación:</strong> Estudiante Actual Ingeniería</p>
+            <p><strong>Skills:</strong> Excel, SQL, Python, R</p>
+             <p><strong>Herramientas de Visualización:</strong> Power BI, Looker & Tableau</p>
+            <p><strong>Modelos:</strong> Regresión, Clasificación, Clustering & Reducción de Dimensionalidad</p>
+          </div>
+          <a href="#" class="linkedin-btn">LinkedIn</a>
+        </div>
+      </section>
+      <style>
+      section.sobre-mi {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 50px 0;
+        gap: 50px;
+      }
+      .left {
+        flex: 1;
+      }
+      .right {
+        flex: 2;
+      }
+      .profile-img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .info {
+        margin-bottom: 30px;
+      }
+      .info p {
+        margin: 5px 0;
+      }
+      .skills {
+        margin-top: 20px;
+      }
+      .skill {
+        margin-bottom: 20px;
+      }
+      .skill-name {
+        margin-bottom: 5px;
+        font-weight: 300;
+      }
+      .skill-bar {
+        background: #fafafa;
+        border-radius: 5px;
+        overflow: hidden;
+        height: 8px;
+      }
+      .skill-bar-fill {
+        height: 100%;
+        background: #3b82f6;
+        width: 0%;
+      }
+      .title {
+        font-size: 36px;
+        font-weight: 800;
+        margin-bottom: 20px;
+      }
+      .about-text {
+        font-weight: 300;
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+      .details p {
+        margin: 10px 0;
+      }
+      .details p strong {
+        font-weight: 600;
+      }
+      .linkedin-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: #3b82f6;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: background 0.3s;
+      }
+      .linkedin-btn:hover {
+        background: #3b82f6;
+      }
+    </style>
+      
+
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        // Types JS
+        var typingEffect = new Typed(".multiText",{
+            strings: ["Analista de Datos","Cientifico de Datos","Estudiante Univeritario"],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 2000
+        })
+        // End of typed JS
+    </script>
+
+
+    <script src="script.js"></script>
+    
+    <!-- Nueva sección añadida -->
+    <section id="habilidades" class="bg-gray-50 py-10">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-3xl font-bold mb-4">Habilidades & Herramientas</h1>
+            <div class="w-16 h-1 bg-black mx-auto mb-8"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="text-blue-500">
+                        <i class="fas fa-code fa-2x"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-semibold text-blue-500">Programación</h2>
+                        <p class="text-gray-700">Python, R, SQL</p>
+                        <p class="text-gray-600 mt-2">Análisis y resolución de problemas a través de lenguajes de programación y consultas de bases de datos.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="text-teal-500">
+                        <i class="fas fa-chart-line fa-2x"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-semibold text-teal-500">Visualización de datos</h2>
+                        <p class="text-gray-700">Matplotlib, Plotly, Seaborn</p>
+                        <p class="text-gray-600 mt-2">Creación de visualizaciones de datos interactivas y perspicaces.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                    <div class="text-red-500">
+                        <i class="fas fa-chart-pie fa-2x"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-semibold text-red-500">Inteligencia de Negocios</h2>
+                        <p class="text-gray-700">Power BI, Looker Studio</p>
+                        <p class="text-gray-600 mt-2">Desarrollo de cuadros de mando completos e informes de negocio.</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fin de la nueva sección -->
+     
+    <!-- Nueva sección añadida -->
+<!-- Sección de Herramientas -->
+<section class="herramientas-section">
+
+    <div class="herramientas-carousel">
+        <!-- Track superior - se mueve hacia la izquierda -->
+        <div class="herramientas-track herramientas-track-top">
+            <!-- Grupo original -->
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/github-light.webp" alt="GitHub">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/n8n.webp" alt="n8n">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/microsoft-excel.webp" alt="Excel">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/powerbi.webp" alt="Power BI">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://www.svgrepo.com/show/354012/looker-icon.svg" alt="Looker Studio">
+                </div>
+            </div>
+            
+            <!-- Grupo duplicado para efecto infinito -->
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/github-light.webp" alt="GitHub">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/n8n.webp" alt="n8n">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/microsoft-excel.webp" alt="Excel">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/powerbi.webp" alt="Power BI">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://img.icons8.com/?size=100&id=9Kvi1p1F0tUo&format=png&color=000000" alt="Tableau">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://www.svgrepo.com/show/354012/looker-icon.svg" alt="Looker Studio">
+                </div>
+            </div>
+            <div class="herramienta-item">
+                <div class="icon-container">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/n8n.webp" alt="n8n">
+                </div>
+            </div>
+        </div>
+        
+     
+</section>  
+    
+    <!-- Nueva sección Proyectos-->
+    <!-- Nueva sección Proyectos -->
+<section id="proyectos" class="section">
+    <div class="content text-center">
+        <h2>Proyectos</h2>
+        <div class="w-16 h-1 bg-black mx-auto mb-8"></div>
+        
+        <div class="project-grid">
+            <div class="project-item">
+                <a href="proyecto1.html">
+                    <img src="/img/Proyecto_RegresionMultiple.png" alt="Proyecto Regresión Multiple">
+                    <div class="tags-top">
+                        <span class="tag green">Predicción</span>
+                    </div>
+                    <h3>Proyecto de Pipeline de Emisiones de CO2</h3>
+                    <p>Implementación de un pipeline de Machine Learning de principio a fin para predecir las emisiones de CO2 de vehículos con Regresión Lineal Multiple.</p>
+                    <div class="tags-bottom">
+                        <span class="tag blue">Python</span>
+                        <span class="tag green">Pandas</span>
+                        <span class="tag purple">LinearRegression</span>
+                    </div>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="proyecto2.html">
+                    <img src="/img/Proyecto_RegresionLogistica.png" alt="Proyecto Prediccion de Abandonos">
+                    <div class="tags-top">
+                        <span class="tag green">Predicción</span>
+                    </div>
+                    <h3>Predicción de Abandono</h3>
+                    <p>Construicción de un modelo capaz de anticipar la cancelación de servicios, permitiendo a la empresa tomar decisiones estratégicas para retener clientes.</p>
+                    <div class="tags-bottom">
+                        <span class="tag blue">Python</span>
+                        <span class="tag green">Pandas</span>
+                        <span class="tag purple">LogisticRegression</span>
+                    </div>
+                </a>
+            </div>
+            <div class="project-item">
+                <a href="proyecto3.html">
+                    <img src="/img/Proyecto_Analisis_Abandono.png" alt="Analisis de Abandono">
+                    <div class="tags-top">
+                        <span class="tag green">Analisis de Datos</span>
+                    </div>
+                    <h3>Analisis de Abandono</h3>
+                            <p>Análisis para revelar las causas detrás del abandono de clientes en telecomunicaciones, transformando información en insights claros</p>
+                            <div class="tags-bottom">
+                                <span class="tag blue">Python</span>
+                                <span class="tag green">Pandas</span>
+                                <span class="tag orange">Seaborn</span>
+                            </div>
+                </a>
+            </div>
+        </div>
+
+        
+        <!-- Botón "Ver todos los proyectos" con margen superior y centrado -->
+       
+    </div>
+    <!-- Dentro de tu section#proyectos, después del project-grid -->
+<div class="btn-container">
+    <a href="projetcs.html" class="ver-proyectos-btn">Ver todos los proyectos →</a>
+    <style>
+        .btn-container {
+            width: 100%;
+            max-width: 1200px; /* Ajusta este valor al ancho máximo de tu project-grid */
+            margin: 2rem auto 0;
+            text-align: center;
+        }
+        
+        .ver-proyectos-btn {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        
+        .ver-proyectos-btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</div>
+
+
+
+
+<section id="contacto" class="section">
+        <style>
+            
+            #contacto .contact-container {
+                margin-top: 4rem;
+                position: relative;
+                max-width: 48rem;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #contacto h1 {
+                text-align: center;
+                font-size: 2.25rem;
+                font-weight: 700;
+                color: #1f2937;
+                margin-bottom: 2rem;
+            }
+            #contacto .divider-line {
+                width: 4rem;
+                height: 0.25rem;
+                background-color: #3b82f6;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 3rem;
+            }
+            #contacto .contact-card {
+                background-color: #fff;
+                padding: 2rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            }
+            #contacto .contact-info h2 {
+                font-size: 1.25rem;
+                font-weight: 600;
+                color: #1f2937;
+                margin-bottom: 1rem;
+            }
+            #contacto .contact-details {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            #contacto .contact-item {
+                display: flex;
+                align-items: center;
+                color: #4b5563;
+            }
+            #contacto .contact-icon {
+                margin-right: 0.75rem;
+                color: #3b82f6;
+            }
+            #contacto .separator {
+                border-top: 1px solid #e5e7eb;
+                margin: 1.5rem 0;
+            }
+            #contacto .contact-form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            #contacto .form-group label {
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: #374151;
+                margin-bottom: 0.5rem;
+            }
+            #contacto .form-control {
+                width: 100%;
+                padding: 0.5rem 1rem;
+                border: 1px solid #d1d5db;
+                border-radius: 0.375rem;
+                font-size: 1rem;
+            }
+            #contacto .form-control:focus {
+                outline: none;
+                outline-width: 2px;
+                outline-color: #3b82f6;
+                border-color: #3b82f6;
+            }
+            #contacto textarea.form-control {
+                min-height: 8rem;
+            }
+            #contacto .submit-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        #contacto .submit-btn:hover {
+            background-color: #2563eb;
+        }
+        #contacto .send-icon {
+            font-size: 0.9rem;
+            order: -1; /* Esto coloca el icono antes del texto */
+        }
+        </style>
+    
+        <div class="contact-container">
+            
+           
+            
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h1>Contacto</h1>
+                    <div class="contact-details">
+                        <p class="contact-item">
+                            <i class="fas fa-envelope contact-icon"></i>
+                            emmanuel.tp.2024@gmail.com
+                        </p>
+                        <p class="contact-item">
+                            <i class="fas fa-phone contact-icon"></i>
+                            +52 2282 062977
+                        </p>
+                        <p class="contact-item">
+                            <i class="fas fa-map-marker-alt contact-icon"></i>
+                            México
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="separator"></div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" class="form-control"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane send-icon"></i>
+                        Enviar mensaje
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+        
+    </section>
+
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+<script src="script.js"></script>
+
+
+</body>
+
+
+
+
+
+</html>

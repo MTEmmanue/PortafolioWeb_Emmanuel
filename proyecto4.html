@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisis Ventas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="img/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="inicio"></body>
+    
+<!-- Menú con botón de Inicio -->
+<nav class="menu">
+    <a href="projetcs.html" class="menu-button">
+        <i class="fas fa-arrow-left"></i> Inicio
+    </a>
+    <div class="mode">
+        <div class="moon-sun" id="toggle-switch">
+            <i class="fa fa-moon" id="moon"></i>
+            <i class="fa fa-sun" id="sun"></i>
+        </div>
+    </div>
+</nav>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de la Calidad del Aire en Lima</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: hwb(0 96% 4%);
+            color: #333;
+        }
+        header img {
+            width: 20%;
+            height: auto;
+        }
+        .main-container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 30px;
+        }
+        .left-column {
+            flex: 6.0; /* Ajustado: menos ancho para dar espacio al lateral derecho */
+            min-width: 0;
+        }
+        .right-column {
+            flex: 3.0; /* Más ancho para Tecnologías */
+            min-width: 10px; /* evita colapsar en pantallas medianas */
+        }
+        .tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tag {
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .green {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .orange {
+            background-color: #ffeeba;
+            color: #856404;
+        }
+        h1 {
+            color: #000;
+            margin-top: 0;
+        }
+        .vision-container {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .vision-container h2 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        .tech-container {
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 15px;
+        }
+        .tech-container h3 {
+            color: #333;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+        .tech-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 8px;
+            margin-top: 10px;
+        }
+        .tech-table td {
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .tech-1 { background-color: #d4edda; color: #155724; }
+        .tech-2 { background-color: #cce5ff; color: #004085; }
+        .tech-3 { background-color: #fff3cd; color: #856404; }
+        .tech-4 { background-color: #f8d7da; color: #721c24; }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        /* Imagen actual vs predicted: tamaño reducido y responsivo */
+        .actual_vs_predicted {
+            width: 100%;
+            max-width: 700px; /* límite de tamaño en escritorio */
+            height: auto;
+            display: block;
+            margin-bottom: 1px;
+        }
+        @media (max-width: 768px) {
+            .actual_vs_predicted { max-width: 320px; }
+        }
+        /* ===== Modo oscuro para esta página ===== */
+        body.dark {
+            background-color: #0b0f12;
+            color: #e5e7eb;
+        }
+
+        body.dark .main-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: none;
+        }
+
+        body.dark .vision-container,
+        body.dark .tech-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: #e5e7eb;
+        }
+
+        body.dark h1, body.dark h2, body.dark h3, body.dark p, body.dark li {
+            color: #e5e7eb;
+        }
+
+        body.dark hr {
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        body.dark .tag {
+            background: rgba(255, 255, 255, 0.02);
+            color: #e5e7eb;
+            border: none;
+        }
+
+        body.dark .tag.green { background-color: rgba(16,185,129,0.10); color: #bbf7d0; }
+        body.dark .tag.orange { background-color: rgba(249,115,22,0.10); color: #ffd8a8; }
+
+        body.dark .tech-table td.tech-1 { background: rgba(16,185,129,0.06); color: #bbf7d0; }
+        body.dark .tech-table td.tech-2 { background: rgba(59,130,246,0.06); color: #bfdbfe; }
+        body.dark .tech-table td.tech-3 { background: rgba(255,235,59,0.06); color: #fff7c2; }
+        body.dark .tech-table td.tech-4 { background: rgba(244,63,94,0.06); color: #ffd1da; }
+
+        /* Imágenes: evitar fondos blancos dominantes */
+        body.dark .actual_vs_predicted,
+        body.dark .pipeline {
+            filter: brightness(0.95);
+            background: transparent;
+        }
+
+        /* Asegurar que la imagen del pipeline se ajuste al contenedor */
+        .pipeline {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 12px 0;
+        }
+
+        /* Evitar que imágenes en contenedores desborden */
+        .vision-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Botón GitHub en dark */
+        body.dark .github-btn { background: #2d3338; }
+        /* Botón GitHub */
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #24292f;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 0 16px 0;
+        }
+        .github-btn i { font-size: 16px; }
+        .github-btn:hover { background: #111214; }
+        
+        /* Compactar texto en la columna derecha */
+        .right-column {
+            box-sizing: border-box;
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+        .right-column p,
+        .right-column li {
+            font-size: 14px;
+            line-height: 1.35;
+            margin-bottom: 0.9rem;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            hyphens: auto;
+        }
+        .right-column h2,
+        .right-column h3 {
+            margin-top: 0.6rem;
+        }
+        .right-column img,
+        .right-column .auto {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .right-column p,
+            .right-column li { font-size: 13px; line-height: 1.3; }
+        }
+        /* Enlaces en modo oscuro */
+        body.dark a {
+            color: #ffffff;
+        }
+        body.dark a:hover,
+        body.dark a:focus {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        /* Aumentar sangría de todas las listas */
+        li {
+            margin-left: 1.6rem;
+        }
+        @media (max-width: 768px) {
+            .right-column p,
+            .right-column li { font-size: 13px; line-height: 1.3; }
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        
+    </header>
+    <div class="main-container">
+        <div class="left-column">
+            <img class="actual_vs_predicted" src="img/analisis_ventas moviles_fondo.jpg" alt="Analisis ventas">
+            <div class="tags">
+                <span class="tag green">Analisis</span>
+            </div>
+            <!-- Botón que enlaza al repositorio del proyecto en GitHub -->
+            <a class="github-btn" href="https://github.com/MTEmmanue/Analisis_Ventas_Moviles/tree/main" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+                Ver en GitHub
+            </a>
+            <h1>Analisis de Ventas de Moviles</h1>
+            <div class="vision-container">
+                
+               <p>Este trabajo colaborativo busca responder a una pregunta clave: ¿qué nos dicen los datos sobre el comportamiento de los clientes y 
+                las ventas de teléfonos móviles?. A través de un análisis estructurado, se transformó información compleja en 
+                insights claros y prácticos que ayudan a entender tendencias, preferencias y oportunidades de negocio.
+                <br><br>
+                Autores:
+                    <li>Joel Andrés Lerma Pazos</li>
+                    <li>Emmanuel de Jesús Muñoz Tapia</li>
+                    <li>Carlos Valladares Morales</li>
+                </p>
+                <br><br>
+            <h3>Características</h3>
+                        
+                <li>Exploración de datos reales de ventas de celulares.</li>
+
+                <li>Limpieza y organización de la información para que sea confiable y fácil de interpretar.</li>
+
+                <li>Visualizaciones claras y atractivas que muestran patrones de consumo y comparaciones entre marcas.</li>
+
+                <li>Análisis avanzado que permite detectar factores clave detrás de las ventas.</li>
+
+                <li>Conclusiones prácticas que convierten los hallazgos en mensajes útiles para la toma de decisiones.</li>
+                <br><br>
+                <h3>Informe</h3>
+
+                Este proyecto analizó una base de datos de 19,552 transacciones de venta de equipos móviles para detectar ineficiencias y oportunidades de crecimiento. El hallazgo más crítico: A pesar de un alto volumen de ventas, el margen promedio global es negativo (-17.77), lo que sugiere que la estrategia actual prioriza el volumen sobre la rentabilidad, o que existen costos ocultos en ciertos canales que deben corregirse inmediatamente.
+                <br><br>
+                <h3>Hallazgos Estratégicos (Insights de Negocio)</h3>
+
+                Al limpiar y procesar los datos con Pandas, descubrí tres pilares clave para la toma de decisiones:
+                <br><br>
+                <li><strong>A. La Alerta de Rentabilidad</strong>
+                    El Problema: El análisis descriptivo reveló que el ingreso promedio por venta es de 333.53, mientras que el costo promedio es de 351.30.
+                    <br><br>
+                    La Causa: El margen promedio es negativo. Esto indica que muchos equipos (probablemente de gama baja o en promociones agresivas) se están vendiendo a pérdida o con márgenes muy estrechos.
+                    <br><br>
+                    Acción Recomendada: Revisar urgentemente la estructura de precios y costos en el canal Retail, que concentra la mayoría de las operaciones.
+                </li>
+
+                <br><br>
+                <li><strong>B. Guerra de Marcas y Gamas</strong>
+
+                Líderes de Volumen: La marca Bmobile (4,566 ventas) y Motorola (4,275 ventas) lideran el mercado, superando a gigantes como Samsung y Xiaomi.
+                <br><br>
+                Preferencia del Consumidor: El mercado es masivo y sensible al precio. Las gamas "Low" (Baja) y "Entry Smart" (Entrada) representan más del 66% de todas las ventas.
+                <br><br>
+                    Oportunidad: Hay un nicho desatendido en la gama "High" y "Premium" que, aunque tiene menos volumen (solo 23 ventas Premium), podría ofrecer los márgenes positivos que la empresa necesita.</li>
+                <br><br>
+
+                <li><strong>C. Centralización Geográfica</strong>
+                El Factor Lima: El departamento de LIMA domina absolutamente con 10,335 ventas (más del 50% del total). El siguiente competidor, PIURA, está muy lejos con solo 1,453 ventas.
+
+                Estrategia: Las campañas de marketing deben hiper-segmentarse. Lo que funciona en Lima no es escalable al resto de provincias sin ajustes. </li>
+                <br><br>
+                <h3>Visualización de Datos</h3>
+                El notebook alojado en GitHub incluye visualizaciones clave generadas con Seaborn y Matplotlib que permiten a la gerencia ver estos patrones rápidamente:
+                <br><br>
+                📊 Distribución de Ventas por Marca (Countplot)
+                <br><br>
+                    <img src="img/distribucion_ventas_marca.png" alt="Distribución de Ventas por Marca" class="auto">
+                    <br><br>
+                </li>
+                💰 Canal con mas costos (Barplot)
+                <br><br>
+                    <img src="img/canal_mayores_costos.png" alt="Canal mayores costos" class="auto">
+                    <br><br>
+                🗺️ Ventas por Departamento
+                <br><br>
+                    <img src="img/ventas_por_departamento.png" alt="Ventas por Departamento" class="auto">
+                <br><br>
+
+
+                <br><br>
+                <h3>Habilidades Técnicas Demostradas</h3>
+
+                Para lograr estos resultados, se aplicó un flujo de trabajo profesional de Ciencia de Datos:
+                <br><br>
+                <li>Limpieza de Datos (Data Cleaning)</li>
+
+                <li>Detección y manejo de 2,409 duplicados.</li>
+
+                <li>Ingeniería de características: Creación de nuevas métricas clave como 'Margen' (Ingreso - Costo) y 'Rentabilidad' (%).
+
+                <li>Normalización de datos categóricos (corrección de 'Celular' vs 'celular').
+
+                <li>Análisis Exploratorio (EDA): Uso de describe() para estadísticas rápidas y detección de outliers financieros.
+
+                <li>Librerías: Dominio de Pandas para manipulación de DataFrames y Seaborn para gráficos estadísticos.
+                </li>
+
+                <br><br>
+                Este trabajo refleja como en trabajo colaborativo y aportando distintas ideas entre los integrantes se puede traducir información compleja en resultados claros y accionables, 
+                una habilidad clave para cualquier organización que quiera aprovechar el poder de los datos.
+
+
+    </div>
+        </div>
+<div class="right-column">
+            <hr>
+            <div class="tech-container">
+                <h3>Tecnologías</h3>
+                <table class="tech-table">
+                    <tr>
+                        <td class="tech-1">Python</td>
+                        <td class="tech-2">Pandas</td>
+                    </tr>
+                    <tr>
+                        <td class="tech-3">Matplotlib</td>
+                        <td class="tech-4">Seaborn</td>
+                    </tr>
+                </table>
+                <div class="vision-container">
+                <h2>Visión general</h2>
+                <p>El proyecto ofrece una mirada panorámica del mercado móvil, mostrando cómo las marcas compiten,
+                     cómo cambian las preferencias de los consumidores y qué tendencias emergen. 
+                     La visión general transmite que los datos no son solo cifras: son una herramienta para comprender el 
+                     comportamiento del mercado y anticipar oportunidades.</p>    
+                    <br><br>
+                    <h2>  Resultados Obtenidos</h2>
+                   
+                    <p>
+                   
+
+                        <li>Identificación de las marcas y modelos líderes en ventas.</li>
+
+                        <li>Identificación de las marcas y modelos líderes en ventas.</li>
+                        <li>Detección de tendencias de crecimiento y caída en distintos periodos.</li>
+                        <li>Evidencia de cómo factores externos influyen en la dinámica del mercado.</li>
+                        <li>Demostración de que los datos pueden convertirse en historias comprensibles y accionables para cualquier público.</li>
+
+<br><br>
+</p>
+                                    
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+</body>
+</html>

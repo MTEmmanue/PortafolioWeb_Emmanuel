@@ -1,0 +1,1599 @@
+/* ===== Web Fonts ==== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
+
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+}
+:root{
+ --bg-color: #ffffff;
+ --first_color: #ffffff;
+ --second-color: #444444;
+ --black-color: #000000;
+ --medium-dark: #444444;
+ --orange-color: #ffa500;
+ --blue-color: #0b7dda;
+ --icons-bg: #f4f4f4;
+}
+body {
+    background: var(--bg-color);
+    width: 100%;
+    height: 100%;
+    min-height: 100dvh;
+    overflow: auto; /* Permite el desplazamiento */
+}
+body.dark{
+ --bg-color: #242526;
+ --first_color: #ffffff;
+ --second-color: #eeeeee;
+ --black-color: #ffffff;
+ --orange-color: #ffa500;
+ --blue-color: #0b7dda;
+ --icons-bg: #242526;
+}
+.wrapper{
+ width: 100%;
+ height: 100%;
+}
+
+/* ===== NAVIGATION BAR ==== */
+.nav{
+ position: fixed;
+ top: 0;
+ width: 100%;
+ height: 100px;
+ display: flex;
+ justify-content: space-between;
+ padding: 0 6vw;
+ line-height: 100px;
+ background: var(--bg-color);
+ z-index: 100;
+}
+.nav_menu_btn{
+ display: none;
+}
+.close-menu{
+ display: none;
+}
+.nav_logo span{
+ font-size: 40px;
+ font-weight: 600;
+ 
+ color: var(--second-color);
+}
+.right_nav{
+ display: flex;
+ column-gap: 2vw;
+}
+.link_list{
+ display: flex;
+}
+.list{
+ position: relative;
+ list-style: none;
+ margin: 0 30px;
+}
+.list .link{
+ text-decoration: none;
+ font-weight: 500;
+ color: var(--black-color);
+}
+.fa-caret-down{
+ margin-left: 5px;
+ transition: .3s;
+}
+.list:hover .fa-caret-down{
+ transform: rotate(180deg);
+}
+.list:hover .description_box{
+ display: flex;
+}
+
+/* ===== DESCRIPTION BOX ===== */
+.description_box{
+ display: none;
+ flex-wrap: wrap;
+ gap: 5px;
+ position: fixed;
+ top: 100px;
+ background: #efefff;
+ width: 400px;
+ min-width: 300px;
+ line-height: 30px;
+ padding: 20px;
+ border-radius: 5px;
+ box-shadow: 1px 6px 10px 2px rgba(0, 0, 0, 0.2);
+ animation: slideUp .3s;
+}
+.description_box::before{
+ content: "";
+ position: absolute;
+ top: -10px;
+ width: 20px;
+ height: 20px;
+ background: #efefff;
+ transform: rotate(45deg);
+}
+@keyframes slideUp {
+ from{
+     top: 130px;
+ }
+ top{
+     top: 100px;
+ }
+}
+.content-title{
+font-size: 18px;
+font-weight: 600;
+color: var(--medium-dark);
+border-bottom: 1px solid #ddd;
+padding-bottom: 10px;
+margin-bottom: 15px;
+}
+.skills-label{
+ font-size: 15px;
+ background: var(--blue-color);
+ color: var(--first_color);
+ border-radius: 5px;
+ padding: 2px 10px;
+}
+.services_list{
+ padding-inline: 20px;
+ margin-top: 10px;
+}
+.about_box{
+ right: 170px;
+}
+.list:last-child .description_box::before{
+ left: 45%;
+}
+.btn{
+ text-decoration: none;
+ font-size: 15px;
+ background: var(--blue-color);
+ color: var(--first_color);
+ padding: 10px 20px;
+ border-radius: 30px;
+ cursor: pointer;
+}
+.mode{
+ display: flex;
+ align-items: center;
+}
+.moon-sun{
+ position: relative;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 40px;
+ width: 40px;
+ background: #f5f5f5;
+ border-radius: 50%;
+ cursor: pointer;
+}
+.moon-sun :is(#moon,#sun){
+ position: absolute;
+ color: var(--medium-dark);
+ transition: .2s ease-in-out;
+}
+#sun{
+ opacity: 0;
+}
+body.dark #sun{
+ opacity: 1;
+}
+body.dark #moon{
+ opacity: 0;
+}
+
+/* ===== MODAL BOX ==== */
+.modal{
+ display: none;
+ position: fixed;
+ left: 0;
+ top: 0;
+ padding-top: 150px;
+ width: 100%;
+ height: 100%;
+ min-height: 100%;
+ min-width: 100%;
+ background-color: rgb(0, 0, 0);
+ background-color: rgba(0, 0, 0, 0.4);
+ overflow: auto;
+ z-index: 120;
+}
+.modal-content{
+ background: var(--first_color);
+ margin: auto;
+ width: 500px;
+ padding: 20px;
+ border-radius: 10px;
+}
+.close{
+ color: #aaa;
+ font-size: 18px;
+ float: right;
+}
+.close :is(:hover,:focus){
+ color: var(--medium-dark);
+ cursor: pointer;
+}
+
+/* ===== END OF NAVIGATION BAR ===== */
+
+/* ===== MAIN BOX ===== */
+.row.hero {
+    display: flex;
+    justify-content: space-between; /* Separa los dos .col */
+    align-items: center; /* Centra verticalmente */
+}
+
+.row{
+ display: flex;
+}
+.hero{
+ position: relative;
+ width: 100%;
+ min-height: 100vh;
+}
+.col{
+ display: flex;
+ width: 50%;
+}
+.col-1{
+ align-items: center;
+ padding-inline: 5vw 50px;
+ color: var(--second-color);
+}
+/* ===== SOCIAL ICONS ===== */
+.social_icons{
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ margin-right: 30px;
+ border-radius: 50px;
+ background: var(--icons-bg);
+}
+.icon{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 40px;
+ height: 40px;
+ margin-block: 5px;
+ color: var(--second-color);
+ cursor: pointer;
+ z-index: 1;
+}
+.icon:nth-child(2){
+ margin-top: 0;
+}
+.icon:last-child{
+ margin-bottom: 0;
+}
+.icon:hover{
+ color: var(--blue-color);
+}
+.icon_circle{
+ position: absolute;
+ top: 20px;
+ left: 20px;
+ transform: translate(-50%, -50%);
+ width: 40px;
+ height: 40px;
+ border: 2px solid var(--blue-color);
+ border-radius: 50%;
+ animation: iconSlide 8s ease 1s infinite alternate;
+}
+@keyframes iconSlide {
+ 25%{
+     border: 2px solid black;
+     top: 20px;
+ }
+ 50%{
+     border: 2px solid black;
+     top: 70px;
+ }
+ 
+}
+/* ===== Paused when the user hover on any icon ===== */
+.social_icons:hover .icon_circle{
+ animation-play-state: paused;
+}
+
+/* ===== Hero Text ===== */
+.hero_box{
+ display: flex;
+ flex-direction: column;
+}
+.hero_box .hello{
+ font-size: 25px;
+ font-weight: 500;
+ margin-bottom: 10px;
+}
+.hero_box .job{
+ font-size: 45px;
+ font-weight: 700;
+ color: var(--second-color);
+ margin-bottom: 10px;
+}
+.hero_box .hero_btn{
+ margin-top: 30px;
+}
+.hero_box button{
+ padding: 10px 20px;
+ border-radius: 5px;
+ border: none;
+ cursor: pointer;
+}
+.btn_1{
+ background: var(--blue-color);
+ color: var(--first_color);
+ box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.btn_2{
+ margin-left: 1vw;
+ background: var(--first_color);
+ box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.btn_2 a{
+ text-decoration: none;
+ color: var(--black_color);
+}
+
+/* ===== HERO IMAGE BOX ===== */
+.row.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 50%;
+    padding-right: 50px;
+    margin-left: auto; /* Opcional, pero ayuda si quieres forzar más a la derecha */
+}
+
+
+.circle img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 700px;
+    
+    
+}
+
+   
+@keyframes circleZoom {
+ 50%{
+     width: 600px;
+ }
+}
+.hero-image{
+ z-index: 50;
+}
+.hero-image img{
+    position: center;
+    width: 450px; /* Ajusta el tamaño de la imagen con íconos */
+    align-self: flex-end; /* Alinea la imagen con íconos a la derecha */
+    margin-right: 20;
+}
+.clients{
+ font-size: 15px;
+ position: absolute;
+ left: -100px;
+ bottom: 90px;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ width: 200px;
+ height: 80px;
+ padding: 0 20px;
+ background: rgba(255, 255, 255, 0.7);
+ border-radius: 10px;
+ box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+ z-index: 60;
+}   
+.experience{
+ font-size: 15px;
+ position: absolute;
+ right: 100px;
+ bottom: 320px;
+ display: flex;
+ align-items: center;
+ gap: 20px;
+ width: 230px;
+ height: 80px;
+ padding: 0 20px;
+ background: rgba(255, 255, 255, 0.7);
+ border-radius: 10px;
+ box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+ z-index: 60;
+} 
+.clients i, .experience i{
+ font-size: 20px;
+}
+
+/* ===== Responsive - Media Query: 1084px ===== */
+@media (max-width: 1084px) {
+ .nav_menu.responsive{
+     position: fixed;
+     left: 0;
+ }
+ .nav_menu{
+     position: fixed;
+     left: -100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 80%;
+     max-width: 600px;
+     height: 100%;
+     background-color: rgba(211, 211, 211, 0.2);
+     backdrop-filter: blur(20px);
+     box-shadow: 3px 0px 10px rgba(0, 0, 0, 0.2);
+     transition: all .2s ease;
+     z-index: 100;
+ }
+ .link_list{
+     flex-direction: column;
+ }
+ .list:hover .description_box{
+     display: none;
+ }
+ .nav_menu_btn{
+     display: flex;
+     align-items: center;
+ }
+ .nav_menu_btn .fa-bars{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 45px;
+     height: 45px;
+     background: var(--second-color);
+     color: var(--bg-color);
+     border-radius: 50%;
+     cursor: pointer;
+ }
+ .close-menu{
+     display: block;
+     position: absolute;
+     top: 0px;
+     right: 30px;
+ }
+ .close-menu i{
+     font-size: 20px;
+     cursor: pointer;
+ }
+ .skills-box{
+     display: flex;
+     flex-wrap: wrap;
+     gap: 5px;
+ }
+ .hero-image img{
+     right: 50px;
+     width: 290px;
+ }
+ .circle{
+     width: 480px;
+ }
+ .circle img{
+     width: 480px;
+ }
+ @keyframes circleZoom {
+     50%{
+         width: 460px;
+     }
+ }
+ .experience{
+     right: 20px;
+     top: 350px;
+ }
+}
+
+/* ===== Responsive - Media Query: 870px ===== */
+@media (max-width: 870px) {
+ body{
+     overflow: auto;
+     overflow-x: hidden;
+     width: 100%;
+ }
+ .row{
+     flex-direction: column;
+ }
+ .col-1{
+     position: relative;
+     top: 150px;
+     padding-inline: 8vw;
+     width: 100%;
+     z-index: 10;
+ }
+ .col-2{
+     position: relative;
+     width: 100%;
+     min-height: 600px;
+ }
+ .hero-image img{
+     right: 100px;
+     width: 280px;
+ }
+ .circle, .circle img{
+     width: 450px;
+ }
+ @keyframes circleZoom {
+     50%{
+         width: 430px;
+     }
+ }
+ .clients{
+     left: 50px;
+     bottom: 50px;
+ }
+}
+
+
+
+/* ===== Responsive - Media Query: 574px ===== */
+@media (max-width: 574px) {
+ .nav_logo span{
+     font-size: 26px;
+ }
+ .nav_button .btn :not(i){
+     display: none;
+ }
+ .modal-content{
+     width: 90%;
+ }
+ .col-1{
+     padding-inline: 7vw;
+ }
+ .hero-image img{
+     right: 20px;
+     width: 250px;
+ }
+ .circle img{
+     width: 380px;
+ }
+ @keyframes circleZoom {
+     50%{
+         width: 360px;
+     }
+ }
+ .social_icons{
+     margin-right: 20px;
+ }
+ .experience{
+     top: 350px;
+ }
+}
+
+/* ===== Responsive - Media Query: 394px ===== */
+@media (max-width: 394px) {
+ .nav_button .btn{
+     display: none;
+ }
+}
+/* ===== Sección Habilidades ===== */
+#habilidades {
+    background-color: #ffffff; /* Fondo gris claro */
+    padding: 40px 20px; /* Espaciado interno */
+}
+
+#habilidades h1 {
+    font-size: 2rem; /* Tamaño del título */
+    font-weight: bold;
+    color: #444444; /* Color del texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+
+
+#habilidades .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseño responsivo */
+    gap: 20px; /* Espaciado entre elementos */
+}
+
+#habilidades .bg-white {
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex;
+    align-items: flex-start;
+    gap: 15px; /* Espaciado entre icono y texto */
+}
+
+#habilidades .bg-white i {
+    font-size: 2rem; /* Tamaño del icono */
+}
+
+#habilidades h2 {
+    font-size: 1.25rem; /* Tamaño del subtítulo */
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+#habilidades p {
+    font-size: 0.875rem; /* Tamaño del texto */
+    color: #444444; /* Color del texto */
+    margin: 0; /* Sin márgenes */
+}
+
+#habilidades .text-blue-500 {
+    color: #007bff; /* Azul para Programación */
+}
+
+#habilidades .text-teal-500 {
+    color: #007bff; /* Verde para Visualización de datos */
+}
+
+#habilidades .text-red-500 {
+    color: #007bff; /* Rojo para Inteligencia de Negocios */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+#habilidades {
+    margin-top: 120px; /* Ajusta según la altura de la barra de navegación */
+}
+/* Modo oscuro para la sección Habilidades */
+body.dark #habilidades {
+    background-color: #242526; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark #habilidades h1 {
+    color: #fff; /* Título en blanco */
+}
+
+body.dark #habilidades .w-16 {
+    background-color: #fff; /* Línea blanca debajo del título */
+}
+
+body.dark #habilidades .bg-white {
+    background-color: #242526; /* Fondo oscuro para las tarjetas */
+    color: #fff; /* Texto blanco dentro de las tarjetas */
+    box-shadow: 0 4px 6px #8f8e8e; /* Sombra más tenue */
+}
+
+body.dark #habilidades .text-blue-500 {
+    color: #fff; /* Azul claro para Programación */
+}
+
+body.dark #habilidades .text-teal-500 {
+    color: #fff; /* Verde claro para Visualización de datos */
+}
+
+body.dark #habilidades .text-red-500 {
+    color: #fff; /* Rojo claro para Inteligencia de Negocios */
+    
+}
+body.dark {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark #habilidades {
+    background-color: #000; /* Fondo negro para la sección */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark #habilidades .bg-white {
+    background-color: #1a1a1a; /* Fondo oscuro para las tarjetas */
+    color: #ffff; /* Texto blanco dentro de las tarjetas */
+}
+
+body.dark #habilidades h1 {
+    color: #ffff; /* Título en blanco */
+}
+
+body.dark #habilidades .w-16 {
+    background-color: #fff; /* Línea blanca debajo del título */
+}
+/* Modo oscuro para el texto debajo de las tarjetas */
+body.dark #habilidades .bg-white p {
+    color: #fff; /* Texto blanco */
+}
+
+body.dark #sobre-mi {
+    background-color: #000; /* Fondo negro para la sección */
+}
+
+body.dark #sobre-mi .content h2 {
+    color: #fff; /* Título en blanco */
+}
+
+body.dark #sobre-mi .content p {
+    color: #fff; /* Texto en blanco */
+}
+
+body.dark #sobre-mi .content .divider {
+    background-color: #fff; /* Línea divisoria en blanco */
+}
+
+/* Modo oscuro para la sección Contacto */
+
+body.dark #contacto h1 {
+    color: var(--first_color);
+}
+
+body.dark #contacto .divider-line {
+    background-color: var(--blue-color);
+}
+
+body.dark #contacto .contact-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(225, 203, 203, 0.06);
+    box-shadow: none;
+    color: var(--first_color);
+}
+
+body.dark #contacto .contact-info h2 {
+    color: var(--first_color);
+}
+
+body.dark #contacto .contact-item {
+    color: #d1d5db;
+}
+
+body.dark #contacto .contact-icon {
+    color: var(--blue-color);
+}
+
+body.dark #contacto .separator {
+    border-top-color: rgba(125, 134, 161, 0.06);
+}
+
+body.dark #contacto .form-group label {
+    color: #d1d5db;
+}
+
+body.dark #contacto .form-control {
+    background: #0d0d0f;
+    border: 1px solid rgba(206, 23, 23, 0.06);
+    color: var(--first_color);
+}
+
+body.dark #contacto .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.dark #contacto .form-control:focus {
+    outline: none;
+    outline-width: 2px;
+    outline-color: rgba(11, 125, 218, 0.25);
+    border-color: var(--blue-color);
+    box-shadow: 0 0 0 6px rgba(11, 125, 218, 0.05);
+}
+
+body.dark #contacto textarea.form-control {
+    min-height: 8rem;
+    color: var(--first_color);
+}
+
+body.dark #contacto .submit-btn {
+    background-color: var(--blue-color);
+    color: #fff;
+    box-shadow: none;
+}
+
+body.dark #contacto .submit-btn:hover {
+    background-color: #2563eb;
+}
+
+
+/* Sección 'Sobre Mí' */
+#sobre-mi {
+    background-color: white;
+    padding: 40px 0;
+}
+
+#sobre-mi .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+/* Imagen a la izquierda */
+#sobre-mi .image-container {
+    flex: 0 0 auto;
+}
+
+#sobre-mi .image-container img {
+    max-width: 10400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Texto a la derecha */
+#sobre-mi .content {
+    flex: 1;
+}
+
+#sobre-mi .content h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--medium-dark);
+    margin-bottom: 1.5rem;
+}
+
+
+
+#sobre-mi .content p {
+    text-align: left;
+    color: #374151;
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+/* Estado inicial de los elementos */
+[data-sr-id] {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-in-out;
+}
+
+/* Estado visible de los elementos */
+[data-sr-id].sr-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Sección Proyectos */
+#proyectos h1 {
+    font-size: 2rem; /* Tamaño del título */
+    font-weight: bold;
+    color: #1f2937; /* Gris oscuro */
+    margin-bottom: 200px; /* Mayor separación debajo del título */
+    text-align: center; /* Centra el título horizontalmente */
+}
+
+#proyectos {
+    padding: 40px 20px;
+    background-color: #fff; /* Fondo blanco */
+}
+
+#proyectos h2 {
+    text-align: center; /* Centra el texto */
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--medium-dark); /* Color del título */
+    margin-bottom: 20px;
+}
+
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Diseño responsivo */
+    gap: 20px; /* Espaciado entre elementos */
+    justify-content: center;
+}
+
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Centra el contenido */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.project-item h3 {
+    font-size: 1.25rem;
+    color: #000; /* Color del título del proyecto */
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 0.875rem;
+    color: #555; /* Color del texto descriptivo */
+    margin: 0;
+}
+
+.project-item a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color del texto */
+}
+/* Estilo para las etiquetas */
+.tag {
+    display: inline-block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin: 5px 5px 10px 0;
+    color: #fff; /* Color del texto */
+    text-align: center;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Colores de las etiquetas */
+.tag.green {
+    background-color: #d1f7c4; /* Verde claro */
+    color: #1a7f37; /* Verde oscuro para el texto */
+}
+
+.tag.orange {
+    background-color: #ffe4cc; /* Naranja claro */
+    color: #d97706; /* Naranja oscuro para el texto */
+}
+
+.tag.blue {
+    background-color: #dbeafe; /* Azul claro */
+    color: #2563eb; /* Azul oscuro para el texto */
+}
+
+/* Contenedor de etiquetas superiores */
+.tags-top {
+    margin-bottom: 10px;
+}
+
+/* Contenedor de etiquetas inferiores */
+.tags-bottom {
+    margin-top: 10px;
+}
+
+/* Ajustes para las tarjetas */
+.project-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* Centra el contenido */
+}
+
+.project-item:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa */
+}
+
+.project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    
+}
+
+.project-item h3 {
+    font-size: 1.25rem;
+    color: #000000; /* Color del título del proyecto */
+    margin-bottom: 10px;
+}
+
+.project-item p {
+    font-size: 0.875rem;
+    color: #555; /* Color del texto descriptivo */
+    margin: 0;
+}
+
+/* Sección Educación */
+#educacion {
+    padding: 40px 20px;
+    
+}
+
+#educacion h1 {
+    font-size: 2rem; /* Tamaño del título */
+    font-weight: bold;
+    color: #1f2937; /* Gris oscuro */
+    margin-bottom: 40px; /* Mayor separación debajo del título */
+    text-align: center; /* Centra el título horizontalmente */
+}
+
+#educacion .w-16 {
+    width: 50px;
+    height: 4px;
+    
+    margin: 0 auto 20px; /* Centra la línea y ajusta el margen inferior */
+}
+
+/* Tarjetas de educación */
+.timeline-container .bg-white {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    display: flex;
+    align-items: center;
+    max-width: 700px; /* Ancho máximo de las tarjetas */
+    margin: 0 auto 30px; /* Centra las tarjetas y añade separación vertical */
+    transition: transform 0.3s, box-shadow 0.3s;
+    gap: 20px; /* Espaciado entre el ícono y el contenido */
+}
+
+.timeline-container .bg-white:hover {
+    transform: scale(1.02); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más intensa */
+}
+
+/* Contenedor del ícono */
+.icon-container {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #f3f4f6; /* Fondo gris claro */
+    border-radius: 50%; /* Ícono circular */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Contenido de la tarjeta */
+.timeline-container .content {
+    flex: 1;
+}
+
+/* Etiqueta "Cursando" */
+.timeline-container .bg-green-100 {
+    background-color: #d1f7c4; /* Verde claro */
+    color: #1a7f37; /* Verde oscuro */
+    font-size: 0.875rem; /* Tamaño del texto */
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px; /* Espaciado debajo de la etiqueta */
+}
+
+/* Título de la tarjeta */
+.timeline-container h2 {
+    font-size: 1.25rem; /* Tamaño del título */
+    color: #1f2937; /* Gris oscuro */
+    margin: 5px 0; /* Espaciado entre el título y la descripción */
+}
+
+/* Descripción de la ubicación */
+.timeline-container p {
+    font-size: 0.875rem; /* Tamaño del texto */
+    color: #6b7280; /* Gris claro */
+    margin: 0; /* Sin márgenes */
+}
+
+/* Año al tope derecho */
+.timeline-container .text-blue-600 {
+    color: #2563eb; /* Azul */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: 600;
+    position: absolute; /* Posiciona el año de forma absoluta */
+    top: 65px; /* Ajusta la posición desde el tope */
+    right: 20px; /* Ajusta la posición desde el lado derecho */
+}
+/* Tarjetas de educación */
+.timeline-container .bg-white {
+    position: relative; /* Necesario para que el año se posicione dentro de la tarjeta */
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    display: flex;
+    align-items: center;
+    max-width: 700px; /* Ancho máximo de las tarjetas */
+    margin: 0 auto 30px; /* Centra las tarjetas y añade separación vertical */
+    gap: 20px; /* Espaciado entre el ícono y el contenido */
+}
+
+
+/* Proyecto 1 */
+/* Estilo del menú */
+.menu {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+}
+
+/* Mover el toggle de modo al extremo derecho, misma altura que el botón Inicio */
+.menu .mode {
+    position: fixed;
+    top: 20px; /* misma altura que .menu */
+    right: 20px; /* extremo derecho */
+    left: auto;
+    z-index: 1001; /* un poco por encima */
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado entre el icono y el texto */
+    background-color: #2974dd; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: background-color 0.3s ease;
+}
+
+.menu-button i {
+    font-size: 1.2rem; /* Tamaño del icono */
+}
+
+.menu-button:hover {
+    background-color: #374151; /* Cambia el color al pasar el mouse */
+}
+
+/* Estilo general de la sección Cursos */
+#cursos .timeline-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#cursos .timeline h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+#cursos .timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+#cursos .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #3498db;
+    transform: translateX(-50%);
+}
+
+#cursos .event {
+    position: relative;
+    margin-bottom: 40px;
+    width: 90%; /* Reduce el ancho del contenedor para hacerlo más compacto */
+    max-width: 800px; /* Ancho máximo para evitar que se extienda demasiado */
+    margin-left: auto; /* Centra el contenedor */
+    margin-right: auto; /* Centra el contenedor */
+    clear: both;
+}
+
+
+#cursos .event::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+#cursos .event-left {
+    float: left;
+    text-align: right;
+    padding-right: 30px;
+    width: 45%;
+}
+
+#cursos .event-right {
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+    width: 45%;
+}
+
+#cursos .event::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #3498db;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #3498db;
+    top: 10px;
+}
+
+#cursos .event-left::before {
+    right: -8px;
+}
+
+#cursos .event-right::before {
+    left: -8px;
+}
+
+#cursos .date {
+    color: #3498db;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#cursos .event h2 {
+    color: #2c3e50;
+    margin: 5px 0;
+    font-size: 1.5em;
+}
+
+#cursos .institution {
+    color: #7f8c8d;
+    margin: 5px 0;
+    font-size: 1.1em;
+}
+
+#cursos .description {
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+#cursos .divider {
+    clear: both;
+    visibility: hidden;
+}
+
+#cursos h1 {
+    font-size: 2rem; /* Tamaño del título */
+    font-weight: bold;
+    color: #1f2937; /* Gris oscuro */
+    margin-bottom: 40px; /* Mayor separación debajo del título */
+    text-align: center; /* Centra el título horizontalmente */
+}
+#cursos {
+    margin-bottom: 15rem; /* Añade un margen inferior para separar de la siguiente sección */
+}
+
+
+/* Modo oscuro para la sección Proyectos */
+body.dark #proyectos {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark #proyectos h1,
+body.dark #proyectos h2 {
+    color: #fff; /* Títulos en blanco */
+}
+
+body.dark #proyectos .project-item {
+    background-color: #1a1a1a; /* Fondo oscuro para las tarjetas */
+    color: #fff; /* Texto blanco dentro de las tarjetas */
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); /* Sombra más tenue */
+}
+
+body.dark #proyectos .project-item h3 {
+    color: #fff; /* Título del proyecto en blanco */
+}
+
+body.dark #proyectos .project-item p {
+    color: #ccc; /* Texto descriptivo en gris claro */
+}
+
+body.dark #proyectos .tag {
+    background-color: #333; /* Fondo oscuro para las etiquetas */
+    color: #fff; /* Texto blanco para las etiquetas */
+}
+
+body.dark #proyectos .tag.green {
+    background-color: #1f7a1f; /* Verde oscuro */
+    color: #d1f7c4; /* Verde claro para el texto */
+}
+
+body.dark #proyectos .tag.orange {
+    background-color: #7a4f1f; /* Naranja oscuro */
+    color: #ffe4cc; /* Naranja claro para el texto */
+}
+
+body.dark #proyectos .tag.blue {
+    background-color: #1f4f7a; /* Azul oscuro */
+    color: #dbeafe; /* Azul claro para el texto */
+}
+/* Modo oscuro para la sección Educación */
+body.dark #educacion {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+body.dark #educacion h1 {
+    color: #fff; /* Título en blanco */
+}
+
+body.dark #educacion .timeline-container .bg-white {
+    background-color: #1a1a1a; /* Fondo oscuro para las tarjetas */
+    color: #fff; /* Texto blanco dentro de las tarjetas */
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); /* Sombra más tenue */
+}
+
+body.dark #educacion .timeline-container .bg-white:hover {
+    transform: scale(1.02); /* Efecto de zoom al pasar el mouse */
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2); /* Sombra más intensa */
+}
+
+body.dark #educacion .timeline-container h2 {
+    color: #fff; /* Título de las tarjetas en blanco */
+}
+
+body.dark #educacion .timeline-container p {
+    color: #ccc; /* Texto descriptivo en gris claro */
+}
+
+body.dark #educacion .timeline-container .text-blue-600 {
+    color: #4f9cf9; /* Azul claro para el año */
+}
+/* Modo oscuro para los íconos en la sección Educación */
+body.dark #educacion .icon-container {
+    background-color: #333; /* Fondo oscuro para los íconos */
+    color: #fff; /* Color blanco para los íconos */
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1); /* Sombra más tenue */
+}
+
+body.dark #educacion .icon-container i {
+    color: #fff; /* Color blanco para los íconos */
+}
+
+/* Modo oscuro para la sección Cursos */
+body.dark #cursos {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco por defecto */
+}
+
+body.dark #cursos h1 {
+    color: #fff; /* Título "Cursos" en blanco */
+}
+
+body.dark #cursos .timeline::before {
+    background: #3498db; /* Línea central en azul */
+}
+
+body.dark #cursos .event::before {
+    background: #3498db; /* Puntos en azul */
+    box-shadow: 0 0 0 2px #3498db; /* Borde azul */
+}
+
+body.dark #cursos .date {
+    color: #3498db; /* Azul para las fechas */
+}
+
+body.dark #cursos .event h2 {
+    color: #b2cef0; /* Azul claro tirando a blanco para los títulos */
+}
+
+body.dark #cursos .institution {
+    color: #59a8f1; /* Gris claro para las instituciones */
+}
+
+body.dark #cursos .description {
+    color: #ccc; /* Gris claro para las descripciones */
+}
+
+/* Animaciones para about.html */
+.about-img,
+.about-info,
+.skill-mf,
+.heading-section,
+.education-item-centered {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.herramientas-section {
+    padding: 1rem 0;
+    background: transparent;
+}
+
+.herramientas-section h1 {
+    text-align: center;
+    margin-bottom: .0rem;
+    font-size: 2.5rem;
+    color: #e2e8f0;
+    position: relative;
+    padding-bottom: 15px;
+    
+}
+
+.herramientas-section h1:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    
+    border-radius: 2px;
+}
+
+.herramientas-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Tracks comunes */
+.herramientas-track {
+    display: flex;
+    width: max-content;
+}
+
+/* Track superior - se mueve hacia la izquierda */
+.herramientas-track-top {
+    animation: carousel-scroll-left 20s linear infinite;
+    margin-bottom: 15px;
+}
+
+/* Track inferior - se mueve hacia la derecha */
+.herramientas-track-bottom {
+    animation: carousel-scroll-right 40s linear infinite;
+}
+
+.herramienta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    margin: 0 10px;
+    
+    border-radius: 12px;
+    
+    transition: all 0.3s ease;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    
+    flex-shrink: 0;
+}
+
+.herramienta-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+    background: rgba(45, 55, 72, 0.8);
+    border-color: #4299e1;
+}
+
+.icon-container {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    
+    padding: 12px;
+    
+}
+
+.herramienta-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    filter: brightness(1.1);
+}
+
+/* Ocultar los nombres de las herramientas */
+.herramienta-item span {
+    display: none;
+}
+
+/* Animación para mover hacia la izquierda */
+@keyframes carousel-scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Animación para mover hacia la derecha */
+@keyframes carousel-scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.herramientas-carousel:hover .herramientas-track-top,
+.herramientas-carousel:hover .herramientas-track-bottom {
+    animation-play-state: paused;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .herramienta-item {
+        width: 80px;
+        height: 80px;
+        margin: 0 8px;
+    }
+    
+    .icon-container {
+        width: 50px;
+        height: 50px;
+        padding: 8px;
+    }
+    
+    .herramienta-item img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .herramientas-section h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* ===== Modo oscuro para la sección Herramientas ===== */
+
+
+body.dark .herramienta-item {
+    background: rgba(0, 0, 0, 0.03); /* tarjeta sutil en oscuro */
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: none;
+    color: #fff;
+}
+
+/* Ajuste para logos que tienen fondo blanco: añade un sutil borde redondeado a su contenedor */
+body.dark .icon-container {
+    background: transparent;
+    border-radius: 8px;
+}
+
+/* Si algunos iconos son blancos sobre fondo blanco (archivos .webp/.png), se puede atenuar su brillo en dark */
+body.dark .herramienta-item img {
+    filter: brightness(1.05);
+}
+
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .herramienta-item {
+        width: 70px;
+        height: 70px;
+        margin: 0 6px;
+    }
+    
+    .icon-container {
+        width: 45px;
+        height: 45px;
+        padding: 6px;
+    }
+    
+    .herramienta-item img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .herramientas-track-top {
+        margin-bottom: 10px;
+    }
+}
+

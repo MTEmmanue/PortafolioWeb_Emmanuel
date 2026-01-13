@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos - Emmanuel Muñoz</title>
+    <link rel="icon" href="img/image.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="inicio"></body>
+    
+<!-- Menú con botón de Inicio -->
+<nav class="menu">
+    <a href="index.html" class="menu-button">
+        <i class="fas fa-arrow-left"></i> Inicio
+    </a>
+    <div class="mode">
+        <div class="moon-sun" id="toggle-switch">
+            <i class="fa fa-moon" id="moon"></i>
+            <i class="fa fa-sun" id="sun"></i>
+        </div>
+    </div>
+    <div class="nav_menu_btn">
+        <i class="fa fa-bars" onclick="myMenuFunction()"></i>
+    </div>
+    <script src="script.js"></script>
+</nav>
+
+      
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos</title>
+    <style>
+        /* ESTILOS GENERALES (MANTENIDOS EXACTAMENTE IGUAL) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.5;
+            background-color: #f8f9fa;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .divider {
+            width: 60px;
+            height: 3px;
+            background-color: #3498db;
+            margin: 0 auto 30px;
+        }
+        
+        /* SOLO CAMBIO LA ALTURA DEL CONTENEDOR */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .project-item {
+            background: #f0f5fd;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 500px; /* AUMENTÉ LA ALTURA DE 320px A 360px */
+            
+            
+        }
+        
+        /* TODO LO DEMÁS PERMANECE EXACTAMENTE IGUAL */
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .project-item a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 0;
+        }
+        
+        .project-item img {
+            width: 100%;
+            height: 180px; /* Ajusté ligeramente la altura para mejor cobertura */
+            object-fit: cover;
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: none;
+            border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+        }
+        
+        .project-content {
+            padding: 15px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-item h3 {
+            font-size: 1.3rem;
+            margin: 0 0 10px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .project-item p {
+            margin: 0 0 15px;
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .tags-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .tags-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 10px;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .tag.green {
+            background-color: #e6f7e6;
+            color: #2e7d32;
+        }
+        
+        .tag.blue {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .tag.orange {
+            background-color: #fff3e0;
+            color: #e65100;
+        }
+        
+        .tag.purple {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .tag.gray {
+            background-color: #eceff1;
+            color: #546e7a;
+        }
+    </style>
+</head>
+<body>
+    <section id="proyectos" class="section">
+        <div class="content text-center">
+            <h2>Portafolio de Proyectos</h2>
+            
+            
+            <p>Te muestro algunos de mis proyectos que reflejan mis habilidades y conocimientos en diferentes herramientas y técnicas.</p>
+            <p>Haz clic en cada proyecto para obtener más detalles.</p>
+            <div class="project-grid">
+                <!-- Proyecto 1 -->
+                <div class="project-item">
+                <a href="proyecto1.html">
+                    <img src="/img/Proyecto_RegresionMultiple.png" alt="Proyecto Regresión Multiple">
+                    <div class="project-content">
+                        <div class="tags-top">
+                            <span class="tag purple">Aprendizaje automático</span>
+                        </div>
+                        <h3>Proyecto de Pipeline de Emisiones de CO2</h3>
+                        <p>Implementación de un pipeline de Machine Learning de principio a fin para predecir las emisiones de CO2 de vehículos con Regresión Lineal Multiple.</p>
+                        <div class="tags-bottom">
+                            <span class="tag blue">Python</span>
+                            <span class="tag green">Pandas</span>
+                            <span class="tag orange">LinearRegression</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Proyecto 2 -->
+            <div class="project-item">
+                <a href="proyecto2.html">
+                    <img src="/img/Proyecto_RegresionLogistica.png" alt="Proyecto Prediccion de Abandonos">
+                    <div class="project-content">
+                        <div class="tags-top">
+                            <span class="tag purple">Aprendizaje automático</span>
+                        </div>
+                        <h3>Predicción de Abandono</h3>
+                        <p>Construcción de un modelo de clasificación capaz de anticipar la cancelación de servicios, permitiendo a la empresa tomar decisiones estratégicas para retener clientes.</p>
+                        <div class="tags-bottom">
+                            <span class="tag blue">Python</span>
+                            <span class="tag green">Pandas</span>
+                            <span class="tag orange">LogisticRegression</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+                
+                
+        
+                <!-- Proyecto 3 -->
+                <div class="project-item">
+                    <a href="proyecto3.html">
+                        <img src="/img/Proyecto_Analisis_Abandono.png" alt="Analisis de Abandono">
+                        <div class="project-content">
+                            <div class="tags-top">
+                                <span class="tag green">Analisis de Datos</span>
+                            </div>
+                            <h3>Analisis de Abandono</h3>
+                            <p>Analisis Exploratorio y procesamiento para la obtencion de variables que aporten información significativa</p>
+                            <div class="tags-bottom">
+                                <span class="tag blue">Python</span>
+                                <span class="tag green">Pandas</span>
+                                <span class="tag orange">Seaborn</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <!-- Proyecto 4 -->
+                <div class="project-item">
+                    <a href="proyecto4.html">
+                        <img src="/img/Proyecto_Analisis_VentasMoviles.png" alt="Predicción de diabetes">
+                        <div class="project-content">
+                            <div class="tags-top">
+                                <span class="tag green">Analisis de Datos</span>
+                            </div>
+                            <h3>Analisis de Ventas Moviles</h3>
+                            <p>Exploración y análisis de ventas móviles, mostrando patrones para descubrir qué modelos y factores impulsan las preferencias de los clientes.</p>
+                            <div class="tags-bottom">
+                                <span class="tag blue">Python</span>
+                                <span class="tag green">Pandas</span>
+                                <span class="tag orange">Seaborn</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+                <!-- Proyecto 5 -->
+                <div class="project-item">
+                    <a href="proyecto5.html">
+                        <img src="/img/Proyecto5_ETL_Python_SQL.png" alt="ETL con Python a SQL Server">
+                        <div class="project-content">
+                            <div class="tags-top">
+                                <span class="tag blue">Data Engineer</span>
+                            </div>
+                            <h3>Proyecto End-to-End: ETL con Python → SQL Server</h3>
+                            <p>Flujo completo de datos que va desde la extracción y transformación con Python, hasta la carga en SQL Server y analisis en SQL</p>
+                            <div class="tags-bottom">
+                                <span class="tag orange">ETL</span>
+                                <span class="tag blue">Python</span>
+                                <span class="tag green">SQL Server</span>   
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
